@@ -33,7 +33,6 @@ body {
 
 .skill__progress {
   background-color: #444;
-  width: 50%;
   height: 0.6rem;
   border-radius: 0.3rem;
 }

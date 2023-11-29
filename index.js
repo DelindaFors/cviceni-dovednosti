@@ -1,10 +1,22 @@
 /*console.log('funguju!')*/
 
-const skill1 = prompt ("Zadej zkušenosti v HTML:")  
-const skill2 = prompt ("Zadejte uzkušenosti v CSS:")
-const skill3 = prompt ("Zadejte uzkušenosti v JavaScriptu:")
+function updateSkill(skillId, value) {
+    const skill = document.querySelector(`#${skillId}`);
+    const progressBar = skill.querySelector('.skill__progress');
+    const valueElement = skill.querySelector('.skill__value');
 
-document.getElementById("skill1").querySelector(".skill__value").innerText = skill1 + " / 100";
-document.getElementById("skill2").querySelector(".skill__value").innerText = skill2 + " / 100";
-document.getElementById("skill3").querySelector(".skill__value").innerText = skill3 + " / 100";
+progressBar.style.width = `${value}%`;
+valueElement.textContent = `${value} / 100`;
+}
 
+function setskills() {
+    const htmlSkill = prompt ("Zadej zkušenosti v HTML:"); 
+    const cssSkill = prompt ("Zadej zkušenosti v CSS:");
+    const jsSkill = prompt ("Zadej zkušenosti v JavaScriptu:");
+
+updateSkill('skill1', htmlSkill);
+updateSkill('skill2', cssSkill);
+updateSkill('skill3', jsSkill);
+}
+
+setskills();
